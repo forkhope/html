@@ -1,0 +1,27 @@
+Maybe you are using google-chrome and try to view your site locally using a file:///path/to/your/site/out/index.html scheme. Open the javascript console Ctrl+Shift+I you should see something like:
+
+如果你使用的是 google-chrome 并且用 file:///path/to/your/site/out/index.html 这 种方式来查看页面的话，用 Ctrl+Shift+I 打开 JavaScript 控制台，你可能会看到如下 类似的提示：
+
+XMLHttpRequest cannot load file:///path/to/your/site/out/out/style/css/o-blog.less. Cross origin requests are only supported for HTTP.
+less-1.2.1.min.js:8Uncaught Error: NETWORK_ERR: XMLHttpRequest Exception 101
+这是 Chrome 载入本地 JavaScript 文件时的一个特点，这也是 Chrome 中的一个 安全特性 。
+
+你可以用选项 --allow-file-access-from-files 来关闭 Chrome 中的这个特点，或者你可以使用另一个浏览器或者设置一个本地的网页服务器。
+
+有许多复杂的网页服务器解决方案，比如 nginx 或 Apache 或许多 其它的网页服务软件。
+
+你可能会优先选择一个轻量级的简单解决方案。
+
+使用 Python, 只需要简单地运行：
+
+cd /path/to/your/site && python -m SimpleHTTPServer
+然后浏览 http://localhost:8000
+
+在 Emacs 中你还可以使用 emacs-http-server:
+
+(require 'httpd)
+(setq httpd-root "/path/to/your/site")
+(httpd-start)
+然后浏览 http://localhost:8080
+
+其它的替代方法还有使用 elnode, 但它好象更复杂些。

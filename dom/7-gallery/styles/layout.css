@@ -1,0 +1,82 @@
+body {
+	font-family: "Helvetica", "Arial", serif;
+	color: #333;
+	background-color: #ccc;
+	/* 下面一句将<body>节点的顶部和底部的边缘空白设为1em,右边和左边的边缘
+	 * 空白设为页面宽度的10%.这相当于将整个<body>节点,包括其所有子节点放到
+	 * 一个方框中,该方框的顶部与浏览器页面的顶部相距1em,其底部与浏览器页面
+	 * 底部的最小距离也是1em,其右边和左边分别与浏览器界面的右边和左边相距
+	 * 浏览器页面宽度的10%.
+	 * em是相对长度单位,相对于当前对象内文本的字体尺寸(font-size),如当前行
+	 * 内文本的字体尺寸没有被人为设置,则相对于浏览器的默认字体尺寸.例如,有
+	 * 这样一句:body {font-size:12px;},字体尺寸被人为设置为12px,则1em就等于
+	 * 1 * 12px = 12px. px(像素)也是相对长度单位,它相对于显示器屏幕分辨率.
+	 */
+	margin: 1em 10%;
+}
+
+h1 {
+	color: #333;
+	/* transparent:透明的,清晰的,明显的.用它来设置background-color,即不设
+	 * 背景色,此时,如果该节点的父节点设置了background-color属性,则该节点的
+	 * 背景色显示为父节点的背景色,相当于将一块透明玻璃叠到一块红色玻璃上,
+	 * 则垂直往下看到是的红色. background-color的默认值就是transparent.
+	 */
+	background-color: transparent;
+}
+
+a {
+	color: #c60;
+	background-color: transparent;
+	/* font-weight设置字体笔画的粗细,其默认值为normal, bold 表示加粗, */ 
+	font-weight: bold;
+	/* decoration: 装饰,装饰品. <a>节点所闭合的文本默认带有下划线.将
+	 * text-decoration设为none,会这个下划线.下划线对应的值是underline.
+	 */
+	text-decoration: none;
+}
+
+ul {
+	/* 下面一句将节点的4个padding(上,右,下,作)都设为0.
+	 * margin 属性用来设置页面中一个节点所占空间的边缘到相邻节点之间的距离
+	 * padding 属性用来设置节点内容(子节点)到节点边界的距离,相当于在节点
+	 * 方框内又指定一个方框,节点内容只能在方框内排列,不能超出方框范围.
+	 * border 属性用来设置节点方框边线的宽度和高度.
+	 *
+	 * <ul>节点默认带有padding,如果没有下面一句,<li>节点会向里缩进一段距离
+	 */
+	padding: 0;
+}
+
+li {
+	/* <li>节点默认是每个节点单独排一行,下面一句,让其向左漂浮,排在同一行 */
+	float: left;
+	/* 由于上面语句让<li>节点排在同一行,如果没有下面一句,则每个节点间的文本
+	 * 将紧挨在一起显示.将 padding 设为 1em,让<li>节点彼此之间,上下之间留有
+	 * 一定的间隔,看起来美观一些.
+	 */
+	padding: 1em;
+	/* <li>节点默认在文本之前显示一个黑色实心的小圆点.将 list-style 设为
+	 * none,去掉了该小圆点. 关于 list-style 的更多信息,可参见 css 手册.
+	 */
+	list-style: none;
+}
+
+img {
+	/* The display property defines how a certain HTML element should be
+	 * displayed. 如果将该属性设为block,则: the element is displayed as a
+	 * block element (like paragraphs and headers). A block element has
+	 * some whitespace above and below it and does not tolerate any HTML
+	 * elements next to it,即该元素后面什么都没有. tolerate:容忍,容许,忍受
+	 */
+	display: block;
+	/* The clear property specifies which sides of an element where other
+	 * floating elements are not allowed. 其值为both时,表示: no floating
+	 * elements allowed on either the left or the right side.
+	 */
+	clear: both;
+
+	/* 上面两个语句,少了任何一个,界面上的<img>节点都会排在最后一个<li>的
+	 * 右边,即向左漂浮.这两个语句共同让<img>节点独占一行.
+	 */
+}

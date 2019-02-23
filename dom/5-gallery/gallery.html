@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Image Gallery</title>
+</head>
+<body>
+	<h1>Snapshots</h1>
+	<ul>
+		<li>
+			<!-- 下面onclick事件的处理语句中,如果没有最后的return false语句
+			将达不到想要的效果,此时,它会先调用javascript的函数,然后发生默认
+			的行为,即会跳转到新页面去,这不是想要的效果.return false语句可以
+			行成一种"欺骗",似乎这个点击事件并没有发生,抑制了默认行为 -->
+			<a href="images/fireworks.jpg" onclick="showPic(this); 
+			return false;" title="fireworks">Fireworks</a>
+		</li>
+		<li>
+			<a href="images/coffee.jpg" onclick="showPic(this);
+			return false;" title="black coffee">Coffee</a>
+		</li>
+		<li>
+			<a href="images/rose.jpg" onclick="showPic(this);
+			return false;" title="A red, red rose">Rose</a>
+		</li>
+		<li>
+			<a href="images/bigben.jpg" onclick="showPic(this);
+			return false;" title="famous clock">Big Ben</a>
+		</li>
+	</ul>
+	<img id="placeholder" src="images/placeholder.gif" alt="my image" />
+	<script type="text/javascript" src="scripts/showPic.js"></script>
+</body>
+</html>

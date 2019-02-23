@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Shopping list</title>
+	<style type="text/css">
+body {
+	color: white;
+	background-color: black;
+}
+p {
+	color: yellow;
+	font-family: "arial", sans-serif;
+	font-size: 1.2em;
+}
+#purchases {
+	border: 1px solid white;
+	background-color: #333;
+	color: #ccc;
+	padding: 1em;
+}
+#purchases li {
+	font-weight: bold;
+	color: red;
+}
+.sale {
+	font-style: italic;
+}
+/* 这种写法将为下面的第三个li指定两种样式,因为第三个li有两个classname:
+ * sale和important.如果这里.sale和.important里面指定的属性有冲突,具我的测试
+ * 将以后面的.important为准.即以写在后面的样式为准.
+ */
+.important {
+	text-transform: uppercase;
+}
+	</style>
+</head>
+<body>
+	<h1>What to buy</h1>
+	<p title="a gentle reminder">Don't forget to buy this stuff.</p>
+	<ul id="purchases">
+		<li>A tin of beans</li>
+		<li class="sale">Cheese</li>
+		<!-- class attribute spefifies one or more classname for an element
+	    (refers to class in a style sheet),多个classname间以空格分隔 -->
+		<li class="sale important">Milk</li>
+	</ul>
+</body>
+</html>

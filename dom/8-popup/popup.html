@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Pop Up a new window</title>
+	<script type="text/javascript" src="scripts/popUp.js"></script>
+</head>
+<body>
+	<!-- 注意,下面的href里面的网址必须加上http://,否则链接导航会出错.使用
+	http://开头表示一个绝对URL,指向另一个站点;不使用http://或者ftp://等类
+	似标志的是相对URL,指向当前站点内的某个文件. -->
+	<a href="http://www.google.com" onclick="popUp('http://www.google.com');
+	return false;">Google</a>
+
+	<!-- 使用 this 对象来调用 getAttribute() 函数获取 href 属性的值 -->
+	<a href="http://www.google.com" 
+	onclick="popUp(this.getAttribute('href')); return false;">Google</a>
+
+	<!-- 使用标准的 DOM 属性 this.href 来获取 href 属性的值 -->
+	<a href="http://www.google.com" onclick="popUp(this.href);
+	return false">Google</a>
+
+	<!-- Because we're setting the name of the window in the function,
+	any time a new URL is passed to the function, the function will
+	replace the existing spawned window rather than creating a second
+	one -->
+</body>
+</html>
